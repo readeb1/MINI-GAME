@@ -6,7 +6,7 @@ public class App {
         System.out.println("Welcome to Suduko");
 
         Scanner in = new Scanner(System.in);
-        int values
+        
         int playerRow = 0;
         int playerCol = 2;
 
