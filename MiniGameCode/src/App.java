@@ -1,10 +1,15 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Welcome to Suduko");
-        int row = 3;
-        int col = 3;
+
+        Scanner in = new Scanner(System.in);
+        int values
+        int playerRow = 0;
+        int playerCol = 2;
+
         int sudoku[][] = { { 4, 3, 0, 0 },
                 { 1, 2, 3, 0 },
                 { 0, 0, 2, 0 },
