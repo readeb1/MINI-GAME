@@ -2,9 +2,14 @@ public class ArraysUtils {
     /**
      * Overloaded versions of printArray
      * Prints specified array, one element at a time.
-     * @param array
+     * @param sudoku
      */
-    public static void printArray(double[] array){
+    public static void printArray(int[][] sudoku){
+        for (int i = 0; i < sudoku.length;i++){
+            Utilities.prn(sudoku[i]);
+        }
+    }
+    public static void printArray(int[] array){
         for (int i = 0; i < array.length;i++){
             Utilities.prn(array[i]);
         }
