@@ -8,13 +8,21 @@ public class App {
         Scanner in = new Scanner(System.in);
 
         int sudoku[][] = {
-                { 11, 11, 1, 2, 3, 4, 11 },
-                { 11, 10, 9, 9, 9, 9, 10 },
-                { 5, 10, 4, 3, 0, 0, 10 },
-                { 6, 10, 1, 2, 3, 0, 10 },
-                { 7, 10, 0, 0, 2, 0, 10 },
-                { 8, 10, 2, 1, 0, 0, 10 },
-                { 11, 10, 9, 9, 9, 9, 10 } };
+            {11, 11, 1, 2, 3, 4, 11},
+            {11, 10, 9, 9, 9, 9, 10},
+            {5, 10, 4, 3, 1, 2, 10},
+            {6, 10, 1, 2, 3, 4, 10},
+            {7, 10, 3, 4, 2, 1, 10},
+            {8, 10, 2, 1, 4, 0, 10},
+            {11, 10, 9, 9, 9, 9, 10}};
+        // {
+        //         { 11, 11, 1, 2, 3, 4, 11 },
+        //         { 11, 10, 9, 9, 9, 9, 10 },
+        //         { 5, 10, 4, 3, 0, 0, 10 },
+        //         { 6, 10, 1, 2, 3, 0, 10 },
+        //         { 7, 10, 0, 0, 2, 0, 10 },
+        //         { 8, 10, 2, 1, 0, 0, 10 },
+        //         { 11, 10, 9, 9, 9, 9, 10 } };
 
         // ArraysUtils.printArray(sudoku);
         printArray(sudoku);
@@ -22,7 +30,7 @@ public class App {
         boolean failed = false;
 
         while (!isSudokuComplete(sudoku)) {
-            System.out.println("What number would you like to place? Enter the box (ex. A 4 is 3)");
+            System.out.println("What number would you like to place? Enter the box (ex. A 4 3)");
             String change = in.nextLine();
             String[] stringChange = change.split(" ");
 
@@ -50,8 +58,12 @@ public class App {
             System.out.println("You failed! The Sudoku puzzle is not completed correctly.");
         } else {
             System.out.println("Congratulations! You have completed the Sudoku puzzle!");
+            String[] notes = {"C4", "C4", "G4", "G4", "A4", "A4", "G4"};
+        for (int i = 0; i < notes.length; i++){
+        MusicNote.playNote(notes[i], 0.25);
         }
 
+    }
     }
 
     public static void printArray(int [][] array) {
@@ -60,9 +72,9 @@ public class App {
                 if (array[i][j] >= 0 && array[i][j] <= 4) {
                     System.out.print(" " + array[i][j] + " ");
                 } else if (array[i][j] == 9) {
-                    System.out.print("---");
+                    System.out.print("\033[0;34m" + "---" + "\033[0m");
                 } else if (array[i][j] == 10) {
-                    System.out.print(" | ");
+                    System.out.print("\033[0;34m" + " | " +"\033[0m");
                 } else if (array[i][j] == 5) {
                     System.out.print(" A ");
                 } else if (array[i][j] == 6) {
@@ -100,4 +112,9 @@ public class App {
         }
         return true;
     }
+    
+    public static String blue(String text){
+        return "\033[0;34m" + text +"\033[0m";
+    }
+
 }
