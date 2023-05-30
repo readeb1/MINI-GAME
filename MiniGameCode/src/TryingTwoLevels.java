@@ -134,7 +134,7 @@ public class TryingTwoLevels {
 
         for (int i = 0; i < sudoku.length; i++) {
             for (int j = 0; j < sudoku[0].length; j++) {
-                if (sudoku[i][j] != 0 && sudoku[i][j] != sudokuCorrect[i][j]) {
+                if (sudoku[i][j] != sudokuCorrect[i][j]) {
                     return false;
                 }
             }
