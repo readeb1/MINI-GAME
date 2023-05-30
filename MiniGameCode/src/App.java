@@ -140,7 +140,7 @@ public class App {
             }
         }
         return true;
-    }
+    } 
 
     /**
      * Turns the text I chose blue
